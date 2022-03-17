@@ -17,4 +17,11 @@ public class Bala : MonoBehaviour
         transform.position += transform.forward * velocidad * Time.deltaTime;
         
     }
+    void OnCollisionEnter(Collision gameobjectDetect)
+    {
+        if (gameobjectDetect.gameObject.tag == "tanque")
+        {
+            Destroy(gameobjectDetect.gameObject);
+        }
+    }
 }
